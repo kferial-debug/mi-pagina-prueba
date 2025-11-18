@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Infinity Cakes</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #ffe6f2;
+            overflow-x: hidden;
+        }
+
+        /* Fondo con partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ff4f8b;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding-left: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Secciones */
+        section {
+            padding: 120px 10px 70px; /* pegado a la izquierda */
+            text-align: left; /* TODO alineado a la izquierda */
+        }
+
+        h2 {
+            color: #ff2f6d;
+            margin-bottom: 25px;
+            font-size: 34px;
+            padding-left: 0;
+        }
+
+        /* Grids pegados a la izquierda */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            width: 100%;
+            margin: 0; /* sin centrado */
+        }
+
+        .item {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: entrada 0.8s forwards;
+        }
+
+        @keyframes entrada {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 12px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .item button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background: #ff4f8b;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: rebote 1s infinite alternate;
+        }
+
+        @keyframes rebote {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+
+        /* Botones flotantes */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 2000;
+        }
+
+        .floating-buttons img {
+            width: 55px;
+            height: 55px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Partículas -->
+<div id="particles-js"></div>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="https://thumbs.dreamstime.com/b/arequipa-con-edificios-y-monumentos-emblem%C3%A1ticos-l%C3%ADnea-a%C3%A9rea-de-arcos-monasterio-fondo-volc%C3%A1nico-402796783.jpg" style="width:80px;">
+    <span style="color:white; font-weight:bold; font-size:20px;">Infinity Cake</span>
+    <a href="#tortas">Tortas</a>
+    <a href="#postres">Postres</a>
+    <a href="#cupcakes">Cupcakes</a>
+    <a href="#especiales">Especiales</a>
+</div>
+
+<!-- Sección Tortas -->
+<section id="tortas">
+    <h2>Tortas</h2>
+
+    <!-- Presentación -->
+    <div style='display:flex; align-items:center; gap:30px; width:100%; padding:20px; background:white; border-radius:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);'>
+        <img src='https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/8cd340b5c3f7c2024d427ac042e6551e/Derivates/d39946abfdb8966ff90b895d02fb77cd1f8119d1.jpg' style='width:40%; border-radius:20px;'>
+        <div style='width:60%;'>
+            <h3 style='color:#ff2f6d; font-size:30px; margin:0;'>Endulzando Momentos</h3>
+            <p style='font-size:17px; line-height:1.5;'>En <b>Infinity Cakes</b> combinamos creatividad, sabor y pasión para ofrecerte tortas únicas, perfectas para cualquier celebración.</p>
+            <p style='margin-top:10px; font-size:16px; color:#444;'>🎂 Tortas personalizadas<br>🍰 Ingredientes frescos<br>✨ Diseños exclusivos</p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="grid">
+        <div class="item"><img src="https://www.bonella.com.ec/-/media/Project/Upfield/Brands/Rama/Rama-EC/Assets/Recipes/sync-img/d65034c7-c31d-4d41-8ffd-80fcffa0f254.jpg?rev=2d3b42b7082e4be48a0448d611c08566"/><p>Torta de Chocolate</p></div>
+        <div class="item"><img src="https://www.pequerecetas.com/wp-content/uploads/2017/12/como-decorar-tarta-red-velvet.jpg"/><p>Torta Red Velvet</p></div>
+        <div class="item"><img src="https://res.cloudinary.com/riqra/image/upload/v1752091349/sellers/tortas-gaby/products/o9x40s694cz3gm1l32vj.png"/><p>Selva Negra</p></div>
+        <div class="item"><img src="https://www.recetasnestle.com.do/sites/default/files/srh_recipes/e9a6d26b8b7462488d2c3558a037e859.jpg"/><p>Tres Leches</p></div>
+        <div class="item"><img src="https://recetas.coosur.com/wp-content/uploads/sites/2/2023/11/pastel-de-fresa-y-nata.jpg"/><p>Fresas</p></div>
+        <div class="item"><img src="https://cdn0.recetasgratis.net/es/posts/2/0/7/bizcocho_de_zanahoria_de_la_abuela_76702_orig.jpg"/><p>Zanahoria</p></div>
+    </div>
+</section>
+
+
+<!-- Sección Postres -->
+<section id="postres">
+    <h2>Postres</h2>
+
+    <div class="grid">
+        <div class="item"><img src="https://www.jocooks.com/wp-content/uploads/2018/11/cheesecake-1-22.jpg"/><p>Cheesecake</p></div>
+        <div class="item"><img src="https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg"/><p>Tiramisú</p></div>
+        <div class="item"><img src="https://perucomidas.com/wp-content/uploads/2024/04/brownie-peru-comidas.png"/><p>Brownie</p></div>
+        <div class="item"><img src="https://images.ctfassets.net/naglem4vigsd/3ghnulN27uzMoUucb6Bhrw/25e6313d2060e0847c1aa677d6243344/easy_flan2_0-en-us?fm=webp&w=3840"/><p>Flan</p></div>
+        <div class="item"><img src="https://lecaroz.com/wp-content/uploads/2024/11/gelatina-de-panditas-1.jpg"/><p>Gelatina Especial</p></div>
+        <div class="item"><img src="https://cdn0.recetasgratis.net/es/posts/9/3/1/pie_de_limon_peruano_69139_600.jpg"/><p>Pie de Limón</p></div>
+    </div>
+</section>
+
+
+<!-- Sección Cupcakes -->
+<section id="cupcakes">
+    <h2>Cupcakes</h2>
+
+    <div class="grid">
+        <div class="item"><img src="https://origin.cronosmedia.glr.pe/large/2020/10/26/lg_5f9721983619341ea427baf5.jpg"/><p>Vainilla</p></div>
+        <div class="item"><img src="https://carorocco.com/wp-content/uploads/2021/09/Cupcakes-de-Chocolate-y-Cereza-IMAGEN-DESTACADA.jpg"/><p>Chocolate</p></div>
+        <div class="item"><img src="https://i.ytimg.com/vi/dO3iXtQhkjQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB9YrKDWlAKZLEmvunz9zwoqU1gEA"/><p>Arcoíris</p></div>
+        <div class="item"><img src="https://i.pinimg.com/564x/ab/44/48/ab4448d1f7657aad9b2db94411309d30.jpg"/><p>Frutado</p></div>
+    </div>
+</section>
+
+
+<!-- Sección Especiales -->
+<section id="especiales">
+    <h2>Especiales</h2>
+
+    <div class="grid">
+        <div class="item"><img src="https://proingra.com/wp-content/uploads/2022/07/21-JUL-BRAHMAN-II.jpg"/><p>Pastel Premium</p></div>
+        <div class="item"><img src="https://dcdn-us.mitiendanube.com/stores/002/194/623/products/1000390360-b884ac85ed5579424617488680263346-480-0.jpg"/><p>Box Dulce</p></div>
+        <div class="item"><img src="https://m.media-amazon.com/images/I/71KwCRNu0AL.jpg"/><p>Cupcake XXL</p></div>
+        <div class="item"><img src="https://patty.pe/wp-content/uploads/2021/06/MINI-TORTAS.png"/><p>Mini Tortas</p></div>
+    </div>
+</section>
+
+<!-- Botones flotantes -->
+<div class="floating-buttons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/LOGO_UNSA.png/1199px-LOGO_UNSA.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+</div>
+
+<!-- Librería partículas -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS.load('particles-js', 'https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/particles.json');
+</script>
+
+<footer style="background:#ff4f8b; padding:40px 20px; text-align:left; color:white; margin-top:60px; background-image:url('https://images.unsplash.com/photo-1505253216365-81f6fe8ee5a9?auto=format&fit=crop&w=1200&q=60'); background-size:cover; background-position:center; background-blend-mode:overlay;">
+    <h3 style="margin-bottom:10px; font-size:26px;">Infinity Cake</h3>
+    <p style="max-width:600px; font-size:16px;">🎯 Misión
+
+Endulzar la vida de nuestros clientes ofreciendo tortas y postres artesanales, elaborados con calidad, creatividad y pasión.
+
+
+🌟 Visión
+
+Ser la pastelería favorita de la ciudad, reconocida por su sabor único, innovación y atención excepcional. </p>
+    <p style="margin-top:20px; font-size:14px; opacity:0.9;">© 2025 Infinity Cake — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
